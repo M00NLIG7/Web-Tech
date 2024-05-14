@@ -1,65 +1,68 @@
-import Link from "next/link"
-
-// Define the props for the Image component using an interface
-interface ImageProps {
-    alt: string;
-    src: string;
-    width: number;
-    height: number;
-    title: string;
-    author: string;
-    description: string;
-}
-
-// Define the Image component with typed props
-const Image: React.FC<ImageProps> = ({ alt, src, width, height, title, author, description }) => {
+export function About() {
     return (
-        <div className="relative group overflow-hidden rounded-lg">
-            <img
-                alt={alt}
-                className="aspect-video object-cover border border-gray-200 w-full rounded-lg overflow-hidden dark:border-gray-800"
-                height={height}
-                src={src}
-                width={width}
-            />
-            <h3 className="font-semibold mt-2 group-hover:underline text-white">{title}</h3>
-            <p className="text-sm text-gray-500 dark:text-gray-400">{author}</p>
-            <p className="text-sm text-gray-500 dark:text-gray-400">
-                {description}
-
-            </p>
-        </div>
-    );
-};
-
-
-export function Home() {
-    return (
-        <div className="dark">
-            <main className="flex-1 dark:bg-gray-800">
-                <div className="grid md:grid-cols-2 gap-4 p-4 md:p-6">
-                    <div className="grid gap-4">
-                        <Image alt="1984 Cover" src="https://example.com/1984-cover.jpg" width={600} height={400} title="1984" author="George Orwell" description="A dystopian social science fiction novel and cautionary tale of totalitarian society." />
-
-                        <Image alt="To Kill a Mockingbird Cover" src="https://example.com/mockingbird-cover.jpg" width={600} height={400} title="To Kill a Mockingbird" author="Harper Lee" description="A deeply moving story highlighting the serious issues of racial injustice and moral growth." />
-
-                        <Image alt="The Great Gatsby Cover" src="https://example.com/gatsby-cover.jpg" width={600} height={400} title="The Great Gatsby" author="F. Scott Fitzgerald" description="A novel of mystery and tragedy about the American dream in the Roaring Twenties." />
-
-                        <Image alt="Pride and Prejudice Cover" src="https://example.com/pride-prejudice-cover.jpg" width={600} height={400} title="Pride and Prejudice" author="Jane Austen" description="A romantic novel of manners that explores the nature of love, marriage, and society." />
-                    </div>
-                    <div className="grid gap-4">
-
-                        <Image alt="Thumbnail 5" src="/placeholder.svg" width={600} height={400} title="Enchanting Forest" author="by William Clark" description="Lose yourself in the enchanting beauty of the forest." />
-
-                        <Image alt="Thumbnail 6" src="/placeholder.svg" width={600} height={400} title="Tranquil Waters" author="by Olivia White" description="Experience peace and tranquility by the waterside." />
-
-
-                        <Image alt="Thumbnail 7" src="/placeholder.svg" width={600} height={400} title="Majestic Peaks" author="by Daniel Taylor" description="Witness the grandeur of the majestic mountain peaks." />
-
-                        <Image alt="Thumbnail 8" src="/placeholder.svg" width={600} height={400} title="City Skylines" author="by Jessica King" description="Explore the dynamic cityscapes captured in this collection." />
-                    </div>
+        <main className="w-full max-w-6xl mx-auto py-12 md:py-16 lg:py-24 px-4 md:px-6">
+            <section className="mb-12 md:mb-16 lg:mb-20">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">About Us</h1>
+                <p className="text-gray-500 dark:text-gray-400 text-lg md:text-xl lg:text-2xl max-w-3xl">
+                    We are a team of passionate designers and developers who create beautiful and functional digital experiences.
+                </p>
+            </section>
+            <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
+                <div className="flex flex-col items-center text-center">
+                    <img
+                        alt="John Doe"
+                        className="rounded-full mb-4"
+                        height={120}
+                        src="/placeholder.svg"
+                        style={{
+                            aspectRatio: "120/120",
+                            objectFit: "cover",
+                        }}
+                        width={120}
+                    />
+                    <h3 className="text-xl md:text-2xl font-semibold mb-2">John Doe</h3>
+                    <p className="text-gray-500 dark:text-gray-400">Co-Founder, Designer</p>
                 </div>
-            </main>
+                <div className="flex flex-col items-center text-center">
+                    <img
+                        alt="Jane Smith"
+                        className="rounded-full mb-4"
+                        height={120}
+                        src="/placeholder.svg"
+                        style={{
+                            aspectRatio: "120/120",
+                            objectFit: "cover",
+                        }}
+                        width={120}
+                    />
+                    <h3 className="text-xl md:text-2xl font-semibold mb-2">Jane Smith</h3>
+                    <p className="text-gray-500 dark:text-gray-400">Co-Founder, Developer</p>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                    <img
+                        alt="Michael Johnson"
+                        className="rounded-full mb-4"
+                        height={120}
+                        src="/placeholder.svg"
+                        style={{
+                            aspectRatio: "120/120",
+                            objectFit: "cover",
+                        }}
+                        width={120}
+                    />
+                    <h3 className="text-xl md:text-2xl font-semibold mb-2">Michael Johnson</h3>
+                    <p className="text-gray-500 dark:text-gray-400">Lead Developer</p>
+                </div>
+            </section>
+            <section className="mt-12 md:mt-16 lg:mt-20">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Our Project</h2>
+                <p className="text-gray-500 dark:text-gray-400 text-lg md:text-xl lg:text-2xl max-w-3xl">
+                    We are building a cutting-edge web application that helps businesses streamline their operations and improve
+                    their bottom line. Our platform leverages the latest technologies and best practices to deliver a seamless
+                    user experience.
+                </p>
+            </section>
+
             <footer className="border-t p-4 grid place-items-center text-sm gap-4 sm:flex-1/0">
                 <div className="flex items-center gap-2">
                     <p className="font-medium text-white">© 2023 Gallery</p>
@@ -79,7 +82,8 @@ export function Home() {
                     </div>
                 </div>
             </footer>
-        </div>
+        </main>
+
     )
 }
 
@@ -166,3 +170,4 @@ function TwitterIcon(props) {
         </svg>
     )
 }
+
